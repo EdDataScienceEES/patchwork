@@ -97,6 +97,8 @@ bm_is+bmsp_dream+bmsp_biscoe #Default layout
 ```
 
 >pl1_1
+<img width="720" alt="pl1_1" src="https://user-images.githubusercontent.com/91271747/144591149-05e34ba8-d90b-4065-9836-7ebcbf35ffa9.png">
+
 
 Remember to use the zoom button when making composite graphs as the plots panel on RStudio may squish your graphs.
 Checking zoom will help you judge how well you're actually laying out the plots
@@ -114,6 +116,7 @@ bm_is/bmsp_dream+bmsp_biscoe #here we see to '+' stacking instead of placing sid
 Both of these lines produce the same panel.This demonstrates the way that the default layout asked for by `+` adapts to the other layout decisions made in the line of code.
 
 > pl1_2
+<img width="720" alt="pl1_2" src="https://user-images.githubusercontent.com/91271747/144591263-86568b76-3f0d-4939-ab3d-24e1c4baaefc.png">
 
 ### |
 `|` (which can be typed by 'Shift+\' on many laptops) tells R to line the plots up horizontally. The code below produces the same output as the first 'Default Layout' Code above.
@@ -138,6 +141,7 @@ The '+' command splits the available space evenly between each object.
 Therefore, where the unbracketted line of code was splitting the space between 3 objects (bm_is, bmsp_dream and bmsp_biscoe), the bracketed line is splitting the space between only two objects
 
 >pl1_3
+<img width="720" alt="PL1_3" src="https://user-images.githubusercontent.com/91271747/144591366-7954d93d-4268-4f37-ac4c-ac5b23ecd4ef.png">
 
 We can see this clearer in an alternative way to code this panel:
  ```
@@ -152,6 +156,8 @@ This object is then treated with the same level of priority as the object to the
 bm_is+bmsp_dream-bmsp_biscoe
 #note how composition space is split 1:1:2
 ```
+<img width="720" alt="pl1_4" src="https://user-images.githubusercontent.com/91271747/144591566-fa49cd5c-45cb-4ea5-9113-a1fb7b430691.png">
+
 
 :penguin: :penguin: :penguin: :penguin: :penguin::penguin: :penguin: :penguin: :penguin: :penguin::penguin: :penguin: :penguin: :penguin: :penguin:
 
@@ -214,6 +220,8 @@ flbm/(flbm_a+flbm_c+flbm_g)
 ```
 
 > pl2_1
+ <img width="720" alt="pl2_1" src="https://user-images.githubusercontent.com/91271747/144591658-bd206508-057c-4b78-a61f-e82d1b43904d.png">
+
 
 ## Titles
 Through ggplot, each component plot can be titled and subtitled, but panels can also be standalone figures and therefore can need annotating with titles, subtitles and captions too.
@@ -238,7 +246,8 @@ flbm/(flbm_a+flbm_c+flbm_g)+
   ```
   
  > pl2_2
- 
+ <img width="720" alt="pl2_2" src="https://user-images.githubusercontent.com/91271747/144591725-dfcc7f08-24b0-4480-8dc7-f3dfde837b5c.png">
+
 ## Individual labels
 Individually labeling the components of a panel is an easy way to give a shorthand name to them. This is a great help when writing up analysis of the plots.
 ```
@@ -254,6 +263,7 @@ flbm/(flbm_a+flbm_c+flbm_g)+plot_annotation(tag_levels = '1', tag_prefix='Fig. '
 ```
 
 > pl2_3
+<img width="720" alt="pl2_3" src="https://user-images.githubusercontent.com/91271747/144591793-ded02141-3440-498e-ab3b-1469e044b9a4.png">
                                                                                                               
 # 4. More Advanced Layout <a name="mal"></a>
 Now that we can sort and label the component plots, it's time to introduce some handy additions
@@ -275,6 +285,7 @@ flbm+(flbm_a+flbm_c+flbm_g)+plot_layout(nrow=2, heights = c(2:3))
 ```
 
 > pl3_1
+<img width="720" alt="pl3_1" src="https://user-images.githubusercontent.com/91271747/144591848-2d29f7c8-a1df-4fcb-973d-70113e488cec.png">
 
 This lets us alter the ratio of the total available height of the space goes two which objects.
 The same principle can be applied with "widths="
@@ -300,6 +311,7 @@ flbm/(flbm_g+flbm_c+flbm_a)+plot_annotation(tag_levels = '1',
 ```
 
 >pl3_2
+<img width="720" alt="pl3_2" src="https://user-images.githubusercontent.com/91271747/144591916-78c67bef-fa02-4151-a1f7-5ce1727ef9e4.png">
 
 ## Spacing
 If the panel still looks crowded, we can add space in.
@@ -310,7 +322,8 @@ flbm/plot_spacer()/(flbm_g+flbm_c+flbm_a)+
   ```
   
  > pl3_3
- 
+ <img width="720" alt="pl3_3-1" src="https://user-images.githubusercontent.com/91271747/144591975-7a44cb1c-c3cd-41cc-aad1-7fd6c6664d39.png">
+
 plot_spacer() allows you to create what is essentially a blank object. Each occurrence of it in the line of code will react in size and placement in the same way a plot would.
 ```
 (flbm_g|plot_spacer()|flbm_a)/(plot_spacer()|flbm_c|plot_spacer())+
@@ -331,6 +344,7 @@ flbm/grid::textGrob('The figure above shows us that the individual species have 
   ```
   
 > pl3_4
+<img width="720" alt="pl3_4" src="https://user-images.githubusercontent.com/91271747/144592037-9eff9b67-3c42-44e1-8b6c-186a88860398.png">
 
 :penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin::penguin:
 
@@ -369,6 +383,7 @@ bm_is|bmsp_dream/bmsp_biscoe
 ```
 
 > pl4_1
+<img width="720" alt="pl4_1-1" src="https://user-images.githubusercontent.com/91271747/144592107-a281811a-104a-4366-ae93-a6797d51e76e.png">
 
 Since we know how we're panelling the plots, it's easier to figure out how to colour them to emphasise the distinctions.
 
@@ -409,7 +424,8 @@ We'll use a colourblind- friendly pallet of: `"#000000", "#E69F00", "#56B4E9", "
  ```
  
  > pl4_2
- 
+ <img width="720" alt="pl4_2" src="https://user-images.githubusercontent.com/91271747/144592159-edb33ec6-b845-44a9-8399-128f1de584cf.png">
+
 The colours were used like this because the penguine species on all 3 islands- Adelie- never shared an island with more than one other species.
 The background colour of the only Adelie plot was used as the fill for the Adelie box on the other two plots. The colour used as a background for the other two plots
 is the same as the colour used for the island they share with the Adelie penguins. Therefore, the colours make a throughline between the graohs without any possible legends conflicting.
